@@ -4,15 +4,13 @@ class Student
 
   @@all = []
 
-  def initialize(student_hash)
-    student_hash.each do |key, value|
-      instance_variable_set("@" + key.to_s, value)
-    end
+  def initialize(hash)
     @@all << self
   end
 
   def self.create_from_collection(students_array)
-    student_hash.each do 
+    students_array.each do |student|
+      self.new(student)
     end
   end
 
